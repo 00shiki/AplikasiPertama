@@ -21,9 +21,43 @@
         android:id="@+id/btn_tombol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="tombol"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_hello" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_next_page" />
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="16dp"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/tv_hello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btn_next_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_tombol" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
