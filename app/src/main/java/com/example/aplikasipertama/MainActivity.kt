@@ -3,6 +3,7 @@ package com.example.aplikasipertama
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.btn_tombol)
         val imageView = findViewById<ImageView>(R.id.iv_avatar)
         val btnNextPage = findViewById<Button>(R.id.btn_next_page)
+        val editText = findViewById<EditText>(R.id.ed_title)
 
 //        imageView.setImageDrawable(resources.getDrawable(R.drawable.ic_account_circle_black))
 
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             .into(imageView)
 
         button.setOnClickListener {
-            textView.text = "Ohayou"
+            textView.text = editText.text.ifEmpty { "Ohayou" }
         }
 
         btnNextPage.setOnClickListener {
