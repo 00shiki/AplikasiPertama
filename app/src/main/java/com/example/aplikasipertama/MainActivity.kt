@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val actionBar = supportActionBar
+        actionBar!!.title = "Main"
+
         val textView = findViewById<TextView>(R.id.tv_hello)
         val button = findViewById<Button>(R.id.btn_tombol)
         val imageView = findViewById<ImageView>(R.id.iv_avatar)
