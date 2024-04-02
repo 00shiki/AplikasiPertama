@@ -1,24 +1,22 @@
 package com.example.aplikasipertama
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.LinearLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.aplikasipertama.model.Student
+import com.example.aplikasipertama.utils.Resource
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListActivity : AppCompatActivity() {
 
-    private var viewModel: ListViewModel? = null
+    private val listViewModel: ListViewModel by viewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
@@ -28,9 +26,6 @@ class ListActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
-
-        viewModel = ViewModelProvider(this, ViewModelFactory())
-            .get(ListViewModel::class.java)
 
         val actionBar = supportActionBar
         actionBar?.let { title = "List Mahasiswa" }
@@ -54,8 +49,17 @@ class ListActivity : AppCompatActivity() {
             )
         )
         val recyclerView = findViewById<RecyclerView>(R.id.rv_students)
-        recyclerView.adapter = ListAdapter(this, students)
-        viewModel?.layoutState?.observe(this) { layout ->
+//        recyclerView.adapter = ListAdapter(this, students)
+        listViewModel.getStudents().observe(this) {
+            when (it) {
+                is Resource.Success -> {
+                    recyclerView.adapter = ListAdapter(this, it.data)
+                }
+                is Resource.Error -> {}
+                Resource.Loading -> {}
+            }
+        }
+        listViewModel.layoutState.observe(this) { layout ->
             when (layout) {
                 LayoutState.LINEAR -> {
                     recyclerView.layoutManager = LinearLayoutManager(this)
@@ -67,12 +71,13 @@ class ListActivity : AppCompatActivity() {
             }
         }
 
-        recyclerView.setHasFixedSize(true)
-    }
+        val fab = findViewById<FloatingActionButton>(R.id.fab_add)
+        fab.setOnClickListener {
+            val intent = Intent(this, AddActivity::class.java)
+            startActivity(intent)
+        }
 
-    override fun onDestroy() {
-        viewModel = null
-        super.onDestroy()
+        recyclerView.setHasFixedSize(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -82,7 +87,7 @@ class ListActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_layout) {
-            viewModel?.changeLayout()
+            listViewModel.changeLayout()
             return true
         }
         return super.onOptionsItemSelected(item)
