@@ -16,6 +16,9 @@ interface StudentDao {
     @Query("select * from students")
     fun getStudents(): List<StudentEntity>
 
+    @Query("select * from students where name = :name")
+    fun getStudentByName(name: String): StudentEntity
+
     @Update
     suspend fun update(student: StudentEntity)
 
