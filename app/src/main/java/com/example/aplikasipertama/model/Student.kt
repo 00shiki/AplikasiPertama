@@ -7,11 +7,13 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Student(
+    val id: Long? = 0,
     val name: String,
     val major: String
 ) : Parcelable
 
 fun Student.toEntity() = StudentEntity(
+    id,
     name,
     major
 )

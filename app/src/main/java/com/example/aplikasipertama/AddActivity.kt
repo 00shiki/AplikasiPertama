@@ -3,10 +3,7 @@ package com.example.aplikasipertama
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.aplikasipertama.model.Student
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

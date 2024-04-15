@@ -34,6 +34,7 @@ class UpdateActivity : AppCompatActivity() {
 
         updateBtn.setOnClickListener {
             val updatedStudent = Student(
+                id = student?.id?.or(0),
                 name = nameEd.text.ifEmpty { "" }.toString(),
                 major = majorEd.text.ifEmpty { "" }.toString()
             )

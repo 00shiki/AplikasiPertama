@@ -6,12 +6,14 @@ import com.example.aplikasipertama.model.Student
 
 @Entity(tableName = "students")
 data class StudentEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    val id: Long? = 0,
     val name: String,
     val major: String
 )
 
 fun StudentEntity.toModel() = Student(
+    id,
     name,
     major
 )
