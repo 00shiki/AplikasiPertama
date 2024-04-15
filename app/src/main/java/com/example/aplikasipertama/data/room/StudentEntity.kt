@@ -7,7 +7,7 @@ import com.example.aplikasipertama.model.Student
 @Entity(tableName = "students")
 data class StudentEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Long? = 0,
+    val id: Long?,
     val name: String,
     val major: String
 )

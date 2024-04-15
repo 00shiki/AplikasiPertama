@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Student(
-    val id: Long? = 0,
+    val id: Long? = null,
     val name: String,
     val major: String
 ) : Parcelable
