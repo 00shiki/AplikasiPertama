@@ -5,11 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".AddActivity">
+    tools:context=".UpdateActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tf_add_name"
+        android:id="@+id/tf_update_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,35 +16,36 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_add_name"
+            android:id="@+id/ed_update_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tf_add_major"
+        android:id="@+id/tf_update_major"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tf_add_name">
+        app:layout_constraintTop_toBottomOf="@+id/tf_update_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_add_major"
+            android:id="@+id/ed_update_major"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Major" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_add"
+        android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tf_add_major" />
+        app:layout_constraintTop_toBottomOf="@+id/tf_update_major" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
