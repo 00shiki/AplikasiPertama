@@ -13,7 +13,7 @@ data class StudentEntity(
 )
 
 fun StudentEntity.toModel() = Student(
-    id,
+    id.toString(),
     name,
     major
 )
