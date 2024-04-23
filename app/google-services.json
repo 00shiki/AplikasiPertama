@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "414914437739",
+    "project_id": "aplikasipertama-a4f7c",
+    "storage_bucket": "aplikasipertama-a4f7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414914437739:android:0ec2c32277977db1a4072e",
+        "android_client_info": {
+          "package_name": "com.example.aplikasipertama"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414914437739-rsqppudul3vaerenk9vgrjsplaso7pc5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplikasipertama",
+            "certificate_hash": "0887f9fdcd5e7eba0fa6efbbd7a4c0092ae51e22"
+          }
+        },
+        {
+          "client_id": "414914437739-9drc075ttcn3he6od5nn53pkomt0pvgv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN2gyHFIN0yFpXD4D7xDY87Fx-AOQu5Mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414914437739-9drc075ttcn3he6od5nn53pkomt0pvgv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

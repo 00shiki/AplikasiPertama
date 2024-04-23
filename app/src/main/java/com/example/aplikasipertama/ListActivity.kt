@@ -49,15 +49,15 @@ class ListActivity : AppCompatActivity() {
 //            )
 //        )
         val listAdapter = ListAdapter()
-        listViewModel.getStudents()
-        listViewModel.students.observe(this) {
-            Log.d("ListActivity", it.toString())
-            listAdapter.setListStudents(it)
-        }
 
         recyclerView = findViewById(R.id.rv_students)
-        recyclerView.setHasFixedSize(true)
         recyclerView.adapter = listAdapter
+
+        listViewModel.getStudents()
+        listViewModel.getStudents().observe(this) {
+            Log.d("ListActivity", it.toString())
+            listAdapter.submitData(lifecycle, it)
+        }
 
         listViewModel.layoutState.observe(this) { layout ->
             when (layout) {
